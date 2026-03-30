@@ -20,6 +20,18 @@
 
 ## 安装与使用
 
+### 前置依赖
+
+⚠️ **重要**：Step 5 生成 HTML PPT 需要用到 `frontend-slides` skill，**需提前安装**：
+
+```bash
+# 安装 frontend-slides skill（由 @zarazhangrui 提供）
+/skill-install
+# 输入：zarazhangrui/frontend-slides
+```
+
+安装完 `frontend-slides` 后，再安装本 skill。
+
 ### 安装方式
 
 #### 方式一：安装到全局（推荐，一次安装长期使用）
@@ -65,7 +77,7 @@ Claude 会按照工作流引导你完成所有材料的制作，包括：
 2. 筛选相关名人名言
 3. 生成演讲逐字稿
 4. 制作演示指令脚本
-5. 生成 HTML 格式 PPT
+5. 生成 HTML 格式 PPT（依赖 frontend-slides skill）
 
 ---
 
@@ -79,10 +91,22 @@ speech-training-skill/
     └── SKILL.md     # 完整的 Skill 定义文件
 ```
 
+## 依赖关系
+
+| Step | 依赖 |
+|------|------|
+| Step 1-4 | 无额外依赖 |
+| Step 5 (HTML PPT) | 需要提前安装 `frontend-slides` skill |
+
+frontend-slides 仓库：https://github.com/zarazhangrui/frontend-slides
+
 ## 常见问题
 
 **Q: 安装后找不到 skill？**
 A: 重启 Claude Code，确保 skills 目录结构正确：`~/.claude/skills/speech-training/SKILL.md`
+
+**Q: 生成 PPT 时报错？**
+A: 检查是否已安装 `frontend-slides` skill。PPT 生成功能依赖该 skill。
 
 **Q: 可以修改这个 skill 吗？**
 A: 可以！MIT 协议允许自由使用、修改和分发。
